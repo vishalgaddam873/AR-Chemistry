@@ -73,7 +73,7 @@ AFRAME.registerComponent("molecules", {
 
     var nuclesName = document.createElement("a-entity");
     nuclesName.setAttribute("id", `nucleus-name-${elementName}`);
-    nuclesName.setAttribute("position", { x: 0, y: 0.21, z: 0 });
+    nuclesName.setAttribute("position", { x: 0, y: 0.21, z: -0.06 });
     nuclesName.setAttribute("rotation", { x: -90, y: 0, z: 0 });
     nuclesName.setAttribute("text", {
       font: "monoid",
@@ -86,7 +86,7 @@ AFRAME.registerComponent("molecules", {
     nucleus.appendChild(nuclesName);
 
     molecule.appendChild(nucleus);
-    var orbitAngle = -90;
+    var orbitAngle = -180;
     var electronAngle = 30;
     for (var num = 1; num <= numOfElectron; num++) {
       var orbit = document.createElement("a-entity");
@@ -94,11 +94,12 @@ AFRAME.registerComponent("molecules", {
         primitive: "torus",
         arc: 360,
         radius: 0.28,
-        radiusTubular: 0.002
+        radiusTubular: 0.001
       });
 
       orbit.setAttribute("material", {
-        color: "#607d8b"
+        color: "#ff9e80",
+        opacity: 0.3
       });
       orbit.setAttribute("position", {
         x: 0,
@@ -128,7 +129,7 @@ AFRAME.registerComponent("molecules", {
         radius: 0.02
       });
 
-      electron.setAttribute("material", "color", "#757575");
+      electron.setAttribute("material", { color: "#0d47a1", opacity: 0.6 });
       electron.setAttribute("position", {
         x: 0.2,
         y: 0.2,
