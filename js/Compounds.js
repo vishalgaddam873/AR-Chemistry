@@ -50,7 +50,7 @@ AFRAME.registerComponent("molecules", {
     });
 
     card.setAttribute("material", {
-      src: `./assets/card_${elementName}.png`
+      src: `./assets/molecule_cards/card_${elementName}.png`
     });
     card.setAttribute("position", { x: 0, y: 0, z: 0 });
     card.setAttribute("rotation", { x: -90, y: 0, z: 0 });
